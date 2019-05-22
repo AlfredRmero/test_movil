@@ -39,24 +39,16 @@ $(function() {
 			case "MenuDashboard":
 			    cargarVistaIframe("c_general/vstDashboard");
 			    break;
-			case "MenuVenciVehiculos":
-			    cargarVistaIframe("c_consultas/vstVencimientoVehiculo");
+			case "MenuMapa":
+			    cargarVistaIframe("c_general/vstMapa");
 			    break;
-			case "MenuViajesPerdidos":
-			    cargarVistaIframe("c_consultas/vstViajesPerdidos");
+			case "MenuPuntosVirtuales":
+			    cargarVistaIframe("c_general/vstPuntosVirtuales");
 			    break;
-			case "MenuRecaudoDiario":
-			    cargarVistaIframe("c_consultas/vstRecaudoDiario");
-			    break;	
-			case "MenuDescuTimbradas":
-			    cargarVistaIframe("c_consultas/vstDescuentosTimbradas");
-			    break;	
-			case "MenuGraficas":
-			    cargarVistaIframe("c_general/vstGraficas");
+			case "MenuAlarmas":
+			    cargarVistaIframe("c_general/vstAlarmas");
 			    break;
-			case "MenuIngresos":
-			    cargarVistaIframe("c_consultas/vstIngresos");
-			    break;
+			    
 		}
 	});
 

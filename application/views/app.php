@@ -59,26 +59,22 @@
             <span>Resumen</span>
           </a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Consultas</span>
+        <li class="nav-item">
+          <a class="nav-link MenuLink" href="#" id="MenuMapa">
+            <i class="fas fa-fw fa-globe-americas"></i>
+            <span>Mapa Satelital</span>
           </a>
-          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <h6 class="dropdown-header">Alertas:</h6>
-            <a class="dropdown-item MenuLink" href="#" id="MenuVenciVehiculos">Venci. Vehiculos</a>
-            <a class="dropdown-item MenuLink" href="#" id="MenuViajesPerdidos">Viajes Perdidos</a>
-            <a class="dropdown-item MenuLink" href="#" id="MenuRecaudoDiario">Recaudo Diario</a>
-            <div class="dropdown-divider"></div>
-            <h6 class="dropdown-header">Consolidados:</h6>
-            <a class="dropdown-item MenuLink" href="#" id="MenuDescuTimbradas">Descu. Timbradas</a>
-            <a class="dropdown-item MenuLink" href="#" id="MenuIngresos">Ingresos</a>
-          </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link MenuLink" href="#" id="MenuGraficas">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Graficas</span>
+          <a class="nav-link MenuLink" href="#" id="MenuPuntosVirtuales">
+            <i class="fas fa-fw fa-map-marker-alt"></i>
+            <span>Puntos Virtuales</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link MenuLink" href="#" id="MenuAlarmas">
+            <i class="fas fa-fw fa-exclamation-circle"></i>
+            <span>Alertas</span>
           </a>
         </li>
       </ul>

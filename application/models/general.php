@@ -8,12 +8,32 @@ class general extends CI_Model {
 		self::$db = &get_instance()->db;	
 	}
 
-
-	public function query_Vehiculos($idPropietario) {
+    public function query_Vehiculos($idPropietario) {
         $result = $this->db->query('SELECT * FROM `lm_mae_vehiculo` WHERE idPropietario=?', array($idPropietario));
         $a = $result->result_array();
         $result->free_result();
         return $a;
     }
-	
+
+    public function query_ListPosiciones($idPropietario){
+		$result=$this->db->query('call pa_gis_get_UltimasPosiciones_ByIdPropietario(?)', array($idPropietario));
+		$a= $result->result_array();
+		$result->free_result();				
+		return	$a;	
+	}
+
+	public function query_ListPuntos($fecha, $vehiculo){
+        $result=$this->db->query('call paGetHistoricoPuntoFecha (?,?)', array($fecha, $vehiculo));
+		$a= $result->result_array();
+		$result->free_result();
+		return	$a;	
+	}	
+
+	public function query_ListAlarmas($fecha, $vehiculo){                    
+		$result=$this->db->query('SELECT * FROM vst_historico_alarmasreg_todas c WHERE c.`fecha` = ? AND c.`Codigo`= ? ',array($fecha, $vehiculo));
+		$a= $result->result_array();
+		$result->free_result();				
+		return	$a;
+	}
+
 }

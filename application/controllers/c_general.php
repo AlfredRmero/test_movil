@@ -12,12 +12,21 @@ class c_general extends CI_Controller {
 	}
 
 	public function vstDashboard(){
-		$this->load->view('General/dashboard');				
+		$this->load->view('app/dashboard');				
 	}
 
-	public function vstGraficas(){
+	public function vstMapa(){
+		$this->load->view('app/mapa');				
+	}
+
+	public function vstPuntosVirtuales(){
 		$data['vehiculos'] = $this->general->query_Vehiculos($this->session->userdata('idPropietario'));
-		$this->load->view('General/graficas', $data);				
+		$this->load->view('app/puntosVirtuales', $data);				
+	}
+
+	public function vstAlarmas(){
+		$data['vehiculos'] = $this->general->query_Vehiculos($this->session->userdata('idPropietario'));
+		$this->load->view('app/alertas', $data);				
 	}
 
 
@@ -27,8 +36,41 @@ class c_general extends CI_Controller {
 		$data= $this->general->query_Vehiculos($this->session->userdata('idPropietario'));
 		echo json_encode($data);
 	}
-	
-	
-	
 
+	public function jsnlistPosiciones() {
+        $data = $this->general->query_ListPosiciones($this->session->userdata('idPropietario'));
+        echo json_encode((array) $data);
+    }
+
+    public function jsnlistPuntos() {
+        $data = $this->general->query_ListPuntos($_POST["fecha"], $_POST["vehiculo"]);
+        echo json_encode((array) $data);
+    }
+
+    public function jsnlistAlarmas() {
+        $data = $this->general->query_ListAlarmas($_POST["fecha"], $_POST["vehiculo"]);
+        echo json_encode((array) $data);
+    }
+
+/*
+	public function jsnCountVencimientosVehiculo(){    	
+		$data= $this->consultas->query_getCountVencimientosVehiculos($this->session->userdata('idPropietario'));	
+		echo json_encode($data);
+	}
+
+	public function jsnCountViajesPerdidos(){    	
+		$data= $this->consultas->query_getCountViajesPerdidos($this->session->userdata('idPropietario'));	
+		echo json_encode($data);
+	}
+
+	public function jsnCountDescuentosTimbradas(){    	
+		$data= $this->consultas->query_getCountDescuentosTimbradas($this->session->userdata('idPropietario'));	
+		echo json_encode($data);
+	}	
+
+	public function jsnCountRecaudoDiario(){    	
+		$data= $this->consultas->query_getCountRecaudoDiario($this->session->userdata('idPropietario'));	
+		echo json_encode($data);
+	}	
+*/
 }

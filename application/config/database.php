@@ -49,10 +49,10 @@ $active_group = 'default';
 $active_record = TRUE;
 
 
-$db['default']['hostname'] = '162.248.54.223';
-$db['default']['username'] = 'lm_user_root';
-$db['default']['password'] = 'LM.*2016#DB/us3z';
-$db['default']['database'] = 'gtransporte_sb';
+$db['default']['hostname'] = 'lminstance.cr7mdktc7p0t.us-east-2.rds.amazonaws.com';
+$db['default']['username'] = 'lmSoluciones';
+$db['default']['password'] = '2e6WLY!t6AG7putR';
+$db['default']['database'] = 'gtransporte_ts';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
