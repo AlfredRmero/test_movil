@@ -19,6 +19,9 @@
   <link href="<?php echo base_url();?>css/styles.css" rel="stylesheet">
 
   <style>
+      html{
+        touch-action: none;  
+      }
      .redClass{
           background-color: #FFBFBF;
       }

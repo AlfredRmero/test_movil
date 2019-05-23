@@ -39,9 +39,9 @@
               <div class="card text-white bg-primary o-hidden h-100">
                 <div class="card-body">
                   <div class="card-body-icon">
-                    <i class="fas fa-fw fa-comments"></i>
+                    <i class="fas fa-fw fa-bell"></i>
                   </div>
-                  <div class="mr-5" id="divAlerta1">Total Alarmas</div>
+                  <div class="mr-5" id="divAlarmasB">- Alarmas Basicas</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="#">
                   <span class="float-left">Ver mas</span>
@@ -55,9 +55,9 @@
               <div class="card text-white bg-warning o-hidden h-100">
                 <div class="card-body">
                   <div class="card-body-icon">
-                    <i class="fas fa-fw fa-list"></i>
+                    <i class="fas fa-fw fa-exclamation-triangle"></i>
                   </div>
-                  <div class="mr-5" id="divAlerta2">Bloqueos de Hoy</div>
+                  <div class="mr-5" id="divAlarmasC">- Alarmas Criticas</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="#">
                   <span class="float-left">Ver mas</span>
@@ -80,7 +80,6 @@
             <div class="card-footer small text-muted">Actualizado al instante</div>
           </div>
 		  
-
         </div>
 
       </div>

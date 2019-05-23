@@ -1,34 +1,26 @@
 $(function() {
 
-  /*
-	   $.post( "../c_consultas/jsnCountVencimientosVehiculo", {}, function (data){                                                                             
-        $("#divCountVenciVehi").html(data[0].valor + " Vencimientos del Mes");          
+  
+	  $.post( "jsnCountAlarmasCriticas", {}, function (data){                                                                             
+        $("#divAlarmasC").html(data[0].valor + " Alarmas Criticas");          
     },"json");
 
-    $.post( "../c_consultas/jsnCountViajesPerdidos", {}, function (data){                                                                             
-        $("#divCountViajesPerdidos").html(data[0].valor + " Viajes Perdidos");
+    $.post( "jsnCountAlarmasNOCriticas", {}, function (data){                                                                             
+        $("#divAlarmasB").html(data[0].valor + " Alarmas Basicas");
     },"json");
 
-    $.post( "../c_consultas/jsnCountDescuentosTimbradas", {}, function (data){                                                                             
-        $("#divCountDescTim").html(data[0].valor + " Descuentos Timbradas");
-    },"json");
-
-    $.post( "../c_consultas/jsnCountRecaudoDiario", {}, function (data){                                                                             
-        $("#divCountRecaudoDiario").html(data[0].valor + " Recaudos de Hoy");
-    },"json");
-
-    $.post( "../c_graficas/jsnSumTotalTimbradasPorDia", {}, function (data){                                                                             
+    $.post( "jsnGraficaTopVehiculos", {}, function (data){                                                                             
         var fechas = new Array();
-        var tims =  new Array();
-        $.each(data, function( index, value ) {
-          fechas.push(value.fecha);
-          tims.push(value.tim);
+        var vehiculos =  new Array();
+        $.each(data, function(index, value) {
+          fechas.push(value.fecha + "\n Veh. " + value.Codigo);
+          vehiculos.push(value.valor);
         });
-        cargarGrafica(fechas, tims);
+        cargarGrafica(fechas, vehiculos);
     },"json");
 
 
-    function cargarGrafica(pFechas, pTimbradas){
+    function cargarGrafica(pFechas, pValor){
             Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
             Chart.defaults.global.defaultFontColor = '#292b2c';
 
@@ -38,7 +30,7 @@ $(function() {
               data: {
                 labels: pFechas,
                 datasets: [{
-                  label: "Timbradas Totales",
+                  label: "Alarmas Totales",
                   lineTension: 0.3,
                   backgroundColor: "rgba(2,117,216,0.2)",
                   borderColor: "rgba(2,117,216,1)",
@@ -49,7 +41,7 @@ $(function() {
                   pointHoverBackgroundColor: "rgba(2,117,216,1)",
                   pointHitRadius: 50,
                   pointBorderWidth: 2,
-                  data: pTimbradas,
+                  data: pValor,
                 }],
               },
               options: {
@@ -82,7 +74,7 @@ $(function() {
     }
 
 
-  */
+  
 
 
 });

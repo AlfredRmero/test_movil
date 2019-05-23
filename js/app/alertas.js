@@ -40,7 +40,7 @@ $(function() {
                 theme: 'material', 
                 source: dataAdapter,
                 sortable: false,
-                pageable: false,
+                pageable: true,
                 pagerButtonsCount: 3,
                 enableHover: false,
                 selectionMode: 'none',

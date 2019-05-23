@@ -18,6 +18,11 @@
   <link href="https://jqwidgets.com/public/jqwidgets/styles/jqx.material.css" rel="stylesheet">
   <link href="<?php echo base_url();?>css/styles.css" rel="stylesheet">
 
+  <style>
+      html{
+        touch-action: none;  
+      }
+  </style>
   
 
   </head>

@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'sobusa_app_portal';
+$config['encryption_key'] = 'trasalianco_app_portal';
 
 /*
 |--------------------------------------------------------------------------
@@ -244,7 +244,7 @@ $config['encryption_key'] = 'sobusa_app_portal';
 | 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
 |
 */
-$config['sess_cookie_name']		= 'ci_session_portal_sobusa';
+$config['sess_cookie_name']		= 'ci_session_portal_trasalianco';
 $config['sess_expiration']		= 14400;
 $config['sess_expire_on_close']	= TRUE;
 $config['sess_encrypt_cookie']	= FALSE;

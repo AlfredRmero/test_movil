@@ -20,12 +20,12 @@ class c_general extends CI_Controller {
 	}
 
 	public function vstPuntosVirtuales(){
-		$data['vehiculos'] = $this->general->query_Vehiculos($this->session->userdata('idPropietario'));
+		$data['vehiculos'] = $this->general->query_Vehiculos();
 		$this->load->view('app/puntosVirtuales', $data);				
 	}
 
 	public function vstAlarmas(){
-		$data['vehiculos'] = $this->general->query_Vehiculos($this->session->userdata('idPropietario'));
+		$data['vehiculos'] = $this->general->query_Vehiculos();
 		$this->load->view('app/alertas', $data);				
 	}
 
@@ -33,12 +33,12 @@ class c_general extends CI_Controller {
 	// QUERYS
 
 	public function jsnVehiculos(){    	
-		$data= $this->general->query_Vehiculos($this->session->userdata('idPropietario'));
+		$data= $this->general->query_Vehiculos();
 		echo json_encode($data);
 	}
 
 	public function jsnlistPosiciones() {
-        $data = $this->general->query_ListPosiciones($this->session->userdata('idPropietario'));
+        $data = $this->general->query_ListPosiciones();
         echo json_encode((array) $data);
     }
 
@@ -52,25 +52,19 @@ class c_general extends CI_Controller {
         echo json_encode((array) $data);
     }
 
-/*
-	public function jsnCountVencimientosVehiculo(){    	
-		$data= $this->consultas->query_getCountVencimientosVehiculos($this->session->userdata('idPropietario'));	
+	public function jsnCountAlarmasCriticas(){    	
+		$data= $this->general->query_CountAlarmasCriticas();	
 		echo json_encode($data);
 	}
 
-	public function jsnCountViajesPerdidos(){    	
-		$data= $this->consultas->query_getCountViajesPerdidos($this->session->userdata('idPropietario'));	
+	public function jsnCountAlarmasNOCriticas(){    	
+		$data= $this->general->query_CountAlarmasNOCriticas();	
 		echo json_encode($data);
 	}
 
-	public function jsnCountDescuentosTimbradas(){    	
-		$data= $this->consultas->query_getCountDescuentosTimbradas($this->session->userdata('idPropietario'));	
+	public function jsnGraficaTopVehiculos(){    	
+		$data= $this->general->query_graficaTopVehiculos();	
 		echo json_encode($data);
-	}	
+	}
 
-	public function jsnCountRecaudoDiario(){    	
-		$data= $this->consultas->query_getCountRecaudoDiario($this->session->userdata('idPropietario'));	
-		echo json_encode($data);
-	}	
-*/
 }
