@@ -9,14 +9,14 @@ class general extends CI_Model {
 	}
 
     public function query_Vehiculos($idPropietario) {
-        $result = $this->db->query('SELECT * FROM `lm_mae_vehiculo` WHERE idPropietario=?', array($idPropietario));
+        $result = $this->db->query('SELECT * FROM `lm_mae_vehiculo`');
         $a = $result->result_array();
         $result->free_result();
         return $a;
     }
 
     public function query_ListPosiciones($idPropietario){
-		$result=$this->db->query('call pa_gis_get_UltimasPosiciones_ByIdPropietario(?)', array($idPropietario));
+		$result=$this->db->query('call pa_gis_get_UltimasPosiciones()');
 		$a= $result->result_array();
 		$result->free_result();				
 		return	$a;	
