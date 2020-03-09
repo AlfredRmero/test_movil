@@ -427,12 +427,28 @@ body.sidebar-toggled footer.sticky-footer {
   padding-top: 10px !important;
 }
 
+.margin0{
+  margin: 0px;
+}
+
+.marginTop5px{
+  margin-top: 5px;
+}
+
 .marginTop10px{
   margin-top: 10px;
 }
 
 .marginTop20px{
   margin-top: 20px;
+}
+
+.marginBottom10px{
+  margin-bottom: 10px;
+}
+
+.backgroundWhite{
+  background: white;
 }
 
 .backgroundWhiteOscuro{
@@ -485,4 +501,48 @@ body.sidebar-toggled footer.sticky-footer {
 
 .borderRadius7pt{
   border-radius: 7pt;
+}
+
+.nav-tabs li a{
+  padding: 5px 10px;  
+  font-size: 13px;
+}
+
+.inputSmall{
+  font-size: 15px;
+  padding: 2px 10px;
+  height: 31px;
+}
+
+.inputSmallSinPad{
+  font-size: 15px;
+  height: 31px;
+}
+
+.labelStyle{
+    margin-bottom: 2px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.fontSize13px{
+  font-size: 13px;
+}
+
+.centerDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+hr.styleHR {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(46, 43, 193), rgba(0, 0, 0, 0));
+    margin: 10px 0px 10px 0px;
+}
+
+.paddingLaterales10px{
+  padding-left: 10px;
+  padding-right: 10px;
 }

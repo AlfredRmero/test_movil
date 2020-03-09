@@ -23,12 +23,11 @@ $(function() {
 		  confirmButtonText: 'Cerrar Sesion',
 		  cancelButtonText: 'Cancelar',
 		}).then((result) => {
-		  if (result.value) {
-		   		$.post( "index.php/c_app/logout", {}, function (data){																				
-					if(data.resultado){
-						$(location).attr('href','');					
-					}
-				},"json");
+		  if (result.value) {																		
+			
+			$(location).attr('href','../views/login.html');					
+				
+				
 		  }
 		});
 	});
@@ -37,24 +36,20 @@ $(function() {
 	$(".MenuLink").click(function(){
 		switch($(this).attr('id')) {
 			case "MenuDashboard":
-			    cargarVistaIframe("c_general/vstDashboard");
+			    cargarVistaIframe("../views/dashboard.html");
 			    break;
 			case "MenuMapa":
-			    cargarVistaIframe("c_general/vstMapa");
+			    cargarVistaIframe("../views/mapa.html");
 			    break;
-			case "MenuPuntosVirtuales":
-			    cargarVistaIframe("c_general/vstPuntosVirtuales");
+			case "MenuExcesosVelocidad":
+			    cargarVistaIframe("../views/excesosVelocidad.html");
 			    break;
-			case "MenuAlarmas":
-			    cargarVistaIframe("c_general/vstAlarmas");
-			    break;
-			    
 		}
 	});
 
 
 	function cargarVistaIframe(contenido){
-		$("#divIframe").html("<iframe src='index.php/"+contenido+"' class='width100porciento height100porciento' frameborder='0' vspace='0' hspace='0' marginwidth='0' marginheight='0'/></iframe>");
+		$("#divIframe").html("<iframe src="+contenido+" class='width100porciento height100porciento' frameborder='0' vspace='0' hspace='0' marginwidth='0' marginheight='0'/></iframe>");
 	}
 
 

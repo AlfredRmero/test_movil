@@ -20,18 +20,9 @@ $(function() {
 			});
 		}
 
-		$.post( "index.php/c_app/login", {cedula:$("#inputCedula").val(),pass: $("#inputPassword").val()}, function (data){																
-			if(data.resultado){
-				$(location).attr('href','');
-			}else{						
-				swal({
-				  title: 'Error!',
-				  text: data.message,
-				  type: 'error',
-				  confirmButtonText: 'Ok'
-				});
-			}
-		},"json");
+		
+		$(location).attr('href','../views/index.html');
+			
 
 	});
 
