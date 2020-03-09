@@ -18,7 +18,7 @@ $(function() {
 	    content: ''
 	});
 
-	$("#inpFechaConsolidado").val(dateNow());
+/*	$("#inpFechaConsolidado").val(dateNow());
 	$("#inpFechaDetalle").val(dateNow());
 
 	function loadDatosVehiculos() {
@@ -283,5 +283,5 @@ $(function() {
         AjaxDatosGrillaDetalle($("#inpVehiculoHidden").val());
     });
 
-    loadDatosVehiculos();
+    loadDatosVehiculos();*/
 });
