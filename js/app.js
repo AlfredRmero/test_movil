@@ -25,7 +25,7 @@ $(function() {
 		}).then((result) => {
 		  if (result.value) {																		
 			
-			$(location).attr('href','login.html');					
+			$(location).attr('href','/login.html');					
 				
 				
 		  }
