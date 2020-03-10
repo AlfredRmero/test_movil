@@ -13,7 +13,7 @@ $(function() {
     });
 
 	$("#btnCerrarSesion").click(function(){
-		swal({
+		/*swal({
 		  title: 'Seguro?',
 		  text: "Desea cerrar sesion!",
 		  type: 'warning',
@@ -23,26 +23,26 @@ $(function() {
 		  confirmButtonText: 'Cerrar Sesion',
 		  cancelButtonText: 'Cancelar',
 		}).then((result) => {
-		  if (result.value) {																		
+		  if (result.value) {	*/																	
 			$(location).attr('href','../index.html');					
-		  }
-		});
+		/*  }
+		});*/
 	});
 
 	// FUNCIONES MENU
 	$(".MenuLink").click(function(){
-		switch($(this).attr('id')) {
+		/*switch($(this).attr('id')) {
 			case "MenuDashboard":
 			    cargarVistaIframe("dashboard.html");
 			    break;
-			case "MenuMapa":
+			case "MenuMapa":*/
 			    cargarVistaIframe("mapa.html");
 
-			    break;
+			 /*   break;
 			case "MenuExcesosVelocidad":
 			    cargarVistaIframe("excesosVelocidad.html");
 			    break;
-		}
+		}*/
 	});
 
 
