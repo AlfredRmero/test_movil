@@ -39,8 +39,8 @@ $(function() {
 			    cargarVistaIframe("dashboard.html");
 			    break;
 			case "MenuMapa":
-			    //cargarVistaIframe("mapa.html");
-			    $(location).attr('href','mapa.html');
+			    cargarVistaIframe("mapa.html");
+
 			    break;
 			case "MenuExcesosVelocidad":
 			    cargarVistaIframe("excesosVelocidad.html");
