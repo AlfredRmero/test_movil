@@ -21,7 +21,7 @@ $(function() {
 		}
 
 		
-		$(location).attr('href','../views/index.html');
+		$(location).attr('href','index.html');
 			
 
 	});

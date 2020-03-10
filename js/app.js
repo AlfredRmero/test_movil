@@ -25,7 +25,7 @@ $(function() {
 		}).then((result) => {
 		  if (result.value) {																		
 			
-			$(location).attr('href','../views/login.html');					
+			$(location).attr('href','login.html');					
 				
 				
 		  }
@@ -36,13 +36,13 @@ $(function() {
 	$(".MenuLink").click(function(){
 		switch($(this).attr('id')) {
 			case "MenuDashboard":
-			    cargarVistaIframe("../views/dashboard.html");
+			    cargarVistaIframe("dashboard.html");
 			    break;
 			case "MenuMapa":
-			    cargarVistaIframe("../views/mapa.html");
+			    cargarVistaIframe("mapa.html");
 			    break;
 			case "MenuExcesosVelocidad":
-			    cargarVistaIframe("../views/excesosVelocidad.html");
+			    cargarVistaIframe("excesosVelocidad.html");
 			    break;
 		}
 	});

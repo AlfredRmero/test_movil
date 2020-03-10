@@ -9,8 +9,8 @@ $(function() {
 
 	var markers = {};
 
-    var latMapa = "11.2336342";
-    var lonMapa = "-74.1940691";  
+    var latMapa = "11.0073953";
+    var lonMapa = "-74.8286633";
 	var zoom = 13;
 	var mapProp = {center: new google.maps.LatLng(latMapa, lonMapa), zoom: zoom, mapTypeId: google.maps.MapTypeId.ROADMAP};
 	map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
