@@ -1,5 +1,5 @@
 $(function() {
-
+/*
     const toast = swal.mixin({
         toast: true,
         position: 'top-end',
@@ -11,7 +11,7 @@ $(function() {
       type: 'info',
       title: 'Doble click para ver la ubicacion!'
     });
-
+*/
     var map;
     var LatandLong = {lat: parseFloat(10.9738178), lng: parseFloat(-74.7939255)};
 

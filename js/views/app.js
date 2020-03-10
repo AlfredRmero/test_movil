@@ -1,5 +1,5 @@
 $(function() {
-
+/*
 	const toast = swal.mixin({
         toast: true,
         position: 'top-end',
@@ -11,7 +11,7 @@ $(function() {
       type: 'success',
       title: 'Bienvenido Sr(a). ' + $("#spanPropietario").html()
     });
-
+*/
 	$("#btnCerrarSesion").click(function(){
 		/*swal({
 		  title: 'Seguro?',

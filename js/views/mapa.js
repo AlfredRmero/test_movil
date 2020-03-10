@@ -1,12 +1,12 @@
 $(function() {
-
+/*
 	const toast = swal.mixin({
         toast: true,
         position: 'top-end',
         showConfirmButton: false,
         timer: 5000
     });
-
+*/
 	var markers = {};
 
   var latMapa = "11.0073953";
