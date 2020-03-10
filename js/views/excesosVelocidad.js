@@ -12,7 +12,7 @@ $(function() {
       title: 'Doble click para ver la ubicacion!'
     });
 
-    /*var map;
+    var map;
     var LatandLong = {lat: parseFloat(10.9738178), lng: parseFloat(-74.7939255)};
 
     map = new google.maps.Map(document.getElementById('googleMap'), {
@@ -97,9 +97,7 @@ $(function() {
         $("#modalUbicar").modal();
     });
 
-    cargarData();
-
-
+    //cargarData();
 
     $('#modalUbicar').on('shown.bs.modal', function (e) {
       $(".jqx-scrollbar-mobile").css("display", "none");
@@ -108,6 +106,6 @@ $(function() {
     $('#modalUbicar').on('hidden.bs.modal', function (e) {
       $(".jqx-scrollbar-mobile").css("display", "block");
     })
-*/
+
 
 });

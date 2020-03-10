@@ -9,8 +9,8 @@ $(function() {
 
 	var markers = {};
 
-    var latMapa = "11.0073953";
-    var lonMapa = "-74.8286633";
+  var latMapa = "11.0073953";
+  var lonMapa = "-74.8286633";
 	var zoom = 13;
 	var mapProp = {center: new google.maps.LatLng(latMapa, lonMapa), zoom: zoom, mapTypeId: google.maps.MapTypeId.ROADMAP};
 	map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
@@ -60,7 +60,7 @@ $(function() {
 		});
 	}
   	
-  	function getDataVehiculo(codigo) {
+  function getDataVehiculo(codigo) {
 	    $.ajax({
 	        url: "jsnGetDataVehiculoMapa",
 	        type: "POST",
@@ -82,7 +82,7 @@ $(function() {
 
 		        $.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+data["lati"]+","+data["longi"]+"&key=AIzaSyBvrBF3dUzhRUxM4C3Zh_OMAms0-gigDOU",{},  function (geoData){   
                     $("#inpDireccion").val(geoData.results[0].formatted_address);
-                });
+            });
 
 				return false;
 			},
@@ -118,12 +118,12 @@ $(function() {
                 return false;
             }
         });
-    }  
+  }  
 
     function AjaxDatosGrillaDetalle(codigo) {
-		$("#lblTotSubDetalle").text("Sub.: -");
-		$("#lblTotBajDetalle").text("Baj.: -");
-		$("#lblTotBloqDetalle").text("Bloqs: -");
+  		$("#lblTotSubDetalle").text("Sub.: -");
+  		$("#lblTotBajDetalle").text("Baj.: -");
+  		$("#lblTotBloqDetalle").text("Bloqs: -");
         $.ajax({
             url: "jsnGetDetalleMovilidadMapa",
             type: "POST",
@@ -141,8 +141,8 @@ $(function() {
                     rtn.push({val:[{fecha: value.FECHA_HORA, subs: value.SUBIDAS, bajas: value.BAJADAS, bloqueos: value.BLOQUEOS}]});
                 });
                 $("#lblTotSubDetalle").text("Sub.: " + subs);
-				$("#lblTotBajDetalle").text("Baj.: " + bajs);
-				$("#lblTotBloqDetalle").text("Bloqs: " + bloqs);
+        				$("#lblTotBajDetalle").text("Baj.: " + bajs);
+        				$("#lblTotBloqDetalle").text("Bloqs: " + bloqs);
                 crearGrillaDetalle(rtn);
                 return false;
             },
@@ -230,7 +230,7 @@ $(function() {
                   }
             ]
         });       
-	}
+	  }
 
   	function createMarker(lat, longi, velocidad, codigo) {
         var marker = new MarkerWithLabel({
@@ -254,8 +254,8 @@ $(function() {
     }
 
     function RefreshMarker(marker, lat, longi, velocidad, codigo) {
-	    marker.setPosition(new google.maps.LatLng(lat, longi));
-	    marker.setIcon(imagenRumbo(1, 2, true, 1, velocidad));
+	     marker.setPosition(new google.maps.LatLng(lat, longi));
+	     marker.setIcon(imagenRumbo(1, 2, true, 1, velocidad));
     }
 
     function Buscar(codigo) {
@@ -283,5 +283,5 @@ $(function() {
         AjaxDatosGrillaDetalle($("#inpVehiculoHidden").val());
     });
 
-    loadDatosVehiculos();
+    //loadDatosVehiculos();
 });

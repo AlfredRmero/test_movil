@@ -1,7 +1,6 @@
 $(function() {
 
 	$("#btnlogin").click(function(){
-		
 		if($("#inputCedula").val()==""){
 			swal({
 			  title: 'Error!',
@@ -9,6 +8,7 @@ $(function() {
 			  type: 'error',
 			  confirmButtonText: 'Ok'
 			});
+			return false;
 		}
 
 		if($("#inputPassword").val()==""){
@@ -18,12 +18,15 @@ $(function() {
 			  type: 'error',
 			  confirmButtonText: 'Ok'
 			});
+			return false;
 		}
 
-		
-		$(location).attr('href','app.html');
+		$(location).attr('href','views/app.html');
 			
-
 	});
+
+
+
+
 
 });
