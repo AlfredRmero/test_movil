@@ -1,55 +1,46 @@
 $(function() {
-/*
-	const toast = swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000
+
+
+    $.ajax({
+        url: "http://192.190.42.212:3000/vehiculos",
+        type: "GET",
+        dataType: 'JSON',
+        contentType: 'application/json',
+        beforeSend: function (xhr){ 
+            xhr.setRequestHeader('Authorization', localStorage.getItem("token")); 
+        },
+        success: function (res){
+            console.log(res)
+        },
+        error: function (res){
+            console.log(res.responseJSON)
+        }
     });
 
-	toast({
-      type: 'success',
-      title: 'Bienvenido Sr(a). ' + $("#spanPropietario").html()
-    });
-*/
-	$("#btnCerrarSesion").click(function(){
-		/*swal({
-		  title: 'Seguro?',
-		  text: "Desea cerrar sesion!",
-		  type: 'warning',
-		  showCancelButton: true,
-		  confirmButtonColor: '#3085d6',
-		  cancelButtonColor: '#d33',
-		  confirmButtonText: 'Cerrar Sesion',
-		  cancelButtonText: 'Cancelar',
-		}).then((result) => {
-		  if (result.value) {	*/																	
-			$(location).attr('href','../index.html');					
-		/*  }
-		});*/
+
+	$("#btnCerrarSesion").click(function(){																	
+		$(location).attr('href','../index.html');
+		localStorage.removeItem('token');					
 	});
 
 	// FUNCIONES MENU
 	$(".MenuLink").click(function(){
-		/*switch($(this).attr('id')) {
+		switch($(this).attr('id')) {
 			case "MenuDashboard":
 			    cargarVistaIframe("dashboard.html");
 			    break;
-			case "MenuMapa":*/
+			case "MenuMapa":
 			    cargarVistaIframe("mapa.html");
-
-			 /*   break;
+			    break;
 			case "MenuExcesosVelocidad":
 			    cargarVistaIframe("excesosVelocidad.html");
 			    break;
-		}*/
+		}
 	});
-
 
 	function cargarVistaIframe(contenido){
 		$("#divIframe").html("<iframe src="+contenido+" class='width100porciento height100porciento' frameborder='0' vspace='0' hspace='0' marginwidth='0' marginheight='0'/></iframe>");
 	}
-
 
 
 });

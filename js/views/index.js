@@ -1,5 +1,26 @@
 $(function() {
 
+	function setLogin(cedula, pass) {
+	    $.ajax({
+	        url: urlAPI + "/login",
+	        type: "POST",
+	        dataType: 'JSON',
+	        contentType: 'application/json',
+	        data: JSON.stringify({usuario: cedula, contrasena: pass}),
+	        success: function (res){
+	        	localStorage.setItem('token', res.data.token);
+	            alert(res.message);
+	            $(location).attr('href','views/app.html');
+	            return false;
+	        },
+	        error: function (res){
+	        	alert(res.responseJSON.message);
+	            return false;
+	        }
+	    });
+    }
+    
+
 	$("#btnlogin").click(function(){
 		if($("#inputCedula").val()==""){
 			alert("Debe ingresar una cedula");
@@ -11,8 +32,7 @@ $(function() {
 			return false;
 		}
 
-		$(location).attr('href','views/app.html');
-			
+		setLogin($("#inputCedula").val(), $("#inputPassword").val());			
 	});
 
 

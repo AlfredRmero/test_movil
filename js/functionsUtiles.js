@@ -1,3 +1,8 @@
+
+
+var urlAPI = "http://192.190.42.212:3000";
+
+
 var aggregatesRender = function (aggregates) {
 	var value = aggregates['sum'];
 	if( value == null){
