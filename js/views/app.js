@@ -1,21 +1,21 @@
 $(function() {
 
 
-    $.ajax({
-        url: "http://192.190.42.212:3000/vehiculos",
-        type: "GET",
-        dataType: 'JSON',
-        contentType: 'application/json',
-        beforeSend: function (xhr){ 
-            xhr.setRequestHeader('Authorization', localStorage.getItem("token")); 
-        },
-        success: function (res){
-            console.log(res)
-        },
-        error: function (res){
-            console.log(res.responseJSON)
-        }
-    });
+    // $.ajax({
+    //     url: "http://192.190.42.212:3000/vehiculos",
+    //     type: "GET",
+    //     dataType: 'JSON',
+    //     contentType: 'application/json',
+    //     beforeSend: function (xhr){ 
+    //         xhr.setRequestHeader('Authorization', localStorage.getItem("token")); 
+    //     },
+    //     success: function (res){
+    //         console.log(res)
+    //     },
+    //     error: function (res){
+    //         console.log(res.responseJSON)
+    //     }
+    // });
 
 
 	$("#btnCerrarSesion").click(function(){																	
