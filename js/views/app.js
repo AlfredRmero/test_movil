@@ -35,6 +35,9 @@ $(function() {
 			case "MenuExcesosVelocidad":
 			    cargarVistaIframe("excesosVelocidad.html");
 			    break;
+			case "MenuViajes":
+			    cargarVistaIframe("viajes.html");
+			    break;
 		}
 	});
 

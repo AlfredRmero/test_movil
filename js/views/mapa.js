@@ -110,7 +110,7 @@ $(function() {
                     rtn.push({val:[{fecha: value.FECHA_HORA_FINAL, tim: value.pasajeros_automatico, bloqueos: value.BLOQUEOS}]});
                 });
                 $("#lblTotTimConsolidado").text("Timbs: " + timbs);
-				$("#lblTotBloqConsolidado").text("Bloqs: " + bloqs);
+				        $("#lblTotBloqConsolidado").text("Bloqs: " + bloqs);
                 crearGrillaConsolidado(rtn);
                 return false;
             },
@@ -176,7 +176,7 @@ $(function() {
                           var container = "<div>";
                           for (var i = 0; i < punto.length; i++) {
                               var punto = punto[i];
-                              var item = "<div style='width: 100%; overflow: hidden; white-space: nowrap;'>";
+                              var item = '<div style="width: 100%; overflow: hidden; white-space: nowrap;">';
                               var info = "<div style='background: #E9ECEF; margin: 5px; margin-left: 10px; margin-bottom: 3px; padding: 10px 15px; border-radius: 10pt; font-style: italic; font-size: 15px'>";
                               info += "<div class='row'><div class='col-12 col-sm-6'>Fecha: "+punto.fecha+"</div><div class='col-6 col-sm-3'>Timbs: "+punto.tim+"</div><div class='col-6 col-sm-3' style='background: white; color: #039be5; font-weight: bold; border-radius: 7pt 0pt 0pt 7pt;'>Bloqs: "+punto.bloqueos+"</div></div>";
                               info += "</div>";

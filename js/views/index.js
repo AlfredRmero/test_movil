@@ -6,7 +6,7 @@ $(function() {
 	        type: "POST",
 	        dataType: 'JSON',
 	        contentType: 'application/json',
-	        data: JSON.stringify({usuario: cedula, contrasena: pass}),
+	        data: JSON.stringify({cedula: cedula, pass: pass}),
 	        success: function (res){
 	        	localStorage.setItem('token', res.data.token);
 	            alert(res.message);
