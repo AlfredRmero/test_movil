@@ -36,7 +36,7 @@
           <!-- Breadcrumbs-->
           <ol class="breadcrumb marginBottom10px">
             <li class="breadcrumb-item">
-              <a href="#">General</a>
+              <a href="#" class="MenuLink" data-id="MenuDashboard">Inicio</a>
             </li>
             <li class="breadcrumb-item active">Viajes del Dia</li>
           </ol>
@@ -46,7 +46,14 @@
                 <input type="date" id="inpFecha" class="form-control input-sm inputSmall" value="<>" >
             </div>
             <div class="col-12 col-sm-3 marginTop5px">
-              <button type="button" class="btn btn-primary width100porciento inputSmall" id="btnCargar"><i class="fas fa-search"></i> Cargar</button>
+                <label>Fecha Dia <input type="radio" name="inpCheckDia" class="form-control input-sm inputSmall" checked="true" value="0"></label>
+            </div>
+            <div class="col-12 col-sm-3 marginTop5px">
+                <label>Fecha Recaudo <input type="radio" name="inpCheckDia" class="form-control input-sm inputSmall" value="1"></label>
+            </div>
+            <div class="col-12 col-sm-3 marginTop5px">
+              <button type="button" class="btn btn-primary width100porciento inputSmall" id="btnCargar">
+                <i class="fas fa-search"></i> Cargar</button>
             </div>
           </div>
 
@@ -78,6 +85,7 @@
 
     <script src="../js/scripts.js"></script>
     <script src="../js/functionsUtiles.js"></script>
+    <script src="../js/views/app.js"></script>
     <script src="../js/views/viajes.js"></script>
 
 

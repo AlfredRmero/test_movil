@@ -1,76 +1,79 @@
 $(function() {
 
-/*
-	  $.post( "jsnCountAlarmasCriticas", {}, function (data){                                                                             
-        $("#divAlarmasC").html(data[0].valor + " Alarmas Criticas");          
-    },"json");
+  Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+  Chart.defaults.global.defaultFontColor = '#292b2c';
 
-    $.post( "jsnCountAlarmasNOCriticas", {}, function (data){                                                                             
-        $("#divAlarmasB").html(data[0].valor + " Alarmas Basicas");
-    },"json");
 
-    $.post( "jsnGraficaTopVehiculos", {}, function (data){                                                                             
-        var fechas = new Array();
-        var vehiculos =  new Array();
-        $.each(data, function(index, value) {
-          fechas.push(value.fecha + "\n Veh. " + value.Codigo);
-          vehiculos.push(value.valor);
-        });
-        cargarGrafica(fechas, vehiculos);
-    },"json");
-*/
+  let dataUser = JSON.parse(localStorage.getItem('userData'));
 
-  function cargarGrafica(pFechas, pValor){
-      Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
-      Chart.defaults.global.defaultFontColor = '#292b2c';
-
-      var ctx = document.getElementById("myAreaChart");
-      var myLineChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: pFechas,
-          datasets: [{
-            label: "Alarmas Totales",
-            lineTension: 0.3,
-            backgroundColor: "rgba(2,117,216,0.2)",
-            borderColor: "rgba(2,117,216,1)",
-            pointRadius: 5,
-            pointBackgroundColor: "rgba(2,117,216,1)",
-            pointBorderColor: "rgba(255,255,255,0.8)",
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: "rgba(2,117,216,1)",
-            pointHitRadius: 50,
-            pointBorderWidth: 2,
-            data: pValor,
-          }],
-        },
-        options: {
-          scales: {
-            xAxes: [{
-              time: {
-                unit: 'date'
-              },
-              gridLines: {
-                display: false
-              },
-              ticks: {
-              }
-            }],
-            yAxes: [{
-              ticks: {
-                min: 0
-              },
-              gridLines: {
-                color: "rgba(0, 0, 0, .125)",
-              }
-            }],
+  function getSumTimbradas() {
+      $.ajax({
+          url: "http://192.190.42.212:3000/viajes/getSumTimbradasByCarro/"+dataUser.idPropietario,
+          type: "GET",
+          dataType: 'JSON',
+          contentType: 'application/json',
+          beforeSend: function (xhr){ 
+            xhr.setRequestHeader('Authorization', localStorage.getItem('token')); 
           },
-          legend: {
-            display: true
+          success: function (res){
+
+              var rtn = {name: [], data: []};
+              $.each(res.data, function(key, value) {
+                  rtn.name.push(value.Codigo);
+                  rtn.data.push(value.timbradas);
+              });
+
+              cargarGrafica(rtn)
+
+              return false;
+          },
+          error: function (res){
+              console.log(res);
+              return false;
           }
-        }
       });
   }
+
+  function cargarGrafica(data){
+      var ctx = document.getElementById("myAreaChart");
+      var myLineChart = new Chart(ctx, {
+          type: 'horizontalBar',
+          data: {
+            labels: data.name,
+            datasets: [{
+              label: 'Timbradas',
+              backgroundColor: "blue",
+              borderColor: "red",
+              borderWidth: 1,
+              data: data.data
+            }]
+          },
+          options: {
+            elements: {
+              rectangle: {
+                borderWidth: 2,
+              }
+            },
+            responsive: true,
+            legend: {
+              position: 'top',
+            },
+            title: {
+              display: true,
+              text: 'Consolidado ventas por vehiculo'
+            }
+          }
+      });
+  }
+
+
+  $("#divAlarmasB").text("258 Total Timbradas");
+
+  $("#divAlarmasC").text("6  Novedades viajes");
+
+  getSumTimbradas();
+
+
 
 
 });

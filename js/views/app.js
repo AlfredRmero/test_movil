@@ -1,21 +1,8 @@
 $(function() {
+   	
+	let dataUser = JSON.parse(localStorage.getItem('userData'));
 
-
-    // $.ajax({
-    //     url: "http://192.190.42.212:3000/vehiculos",
-    //     type: "GET",
-    //     dataType: 'JSON',
-    //     contentType: 'application/json',
-    //     beforeSend: function (xhr){ 
-    //         xhr.setRequestHeader('Authorization', localStorage.getItem("token")); 
-    //     },
-    //     success: function (res){
-    //         console.log(res)
-    //     },
-    //     error: function (res){
-    //         console.log(res.responseJSON)
-    //     }
-    // });
+    $('#lblpropietario').text(dataUser.personalCorto);
 
 
 	$("#btnCerrarSesion").click(function(){																	
@@ -23,9 +10,12 @@ $(function() {
 		localStorage.removeItem('token');					
 	});
 
+ 	
+        
 	// FUNCIONES MENU
-	$(".MenuLink").click(function(){
-		switch($(this).attr('id')) {
+	$(document).on('click','.MenuLink',function(){
+	
+		switch($(this).data('id')) {
 			case "MenuDashboard":
 			    cargarVistaIframe("dashboard.html");
 			    break;
@@ -37,6 +27,9 @@ $(function() {
 			    break;
 			case "MenuViajes":
 			    cargarVistaIframe("viajes.html");
+			    break;
+			case "MenuGraficas":
+			    cargarVistaIframe("grafica.html");
 			    break;
 		}
 	});
