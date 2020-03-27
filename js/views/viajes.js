@@ -1,10 +1,11 @@
 $(function() {
- $('#inpFecha').val(dateNow());
 
- let dataUser = JSON.parse(localStorage.getItem('userData'));
+    $('#inpFecha').val(dateNow());
+
+    let dataUser = JSON.parse(localStorage.getItem('userData'));
 
  
-  function getViajes(fecha, tipo, propietario) {
+    function getViajes(fecha, tipo, propietario) {
       $.ajax({
           url: urlAPI + "/viajes/getViajesRecaudados/"+fecha+"/"+tipo+"/"+propietario,
           type: "GET",
@@ -35,7 +36,7 @@ $(function() {
       });
     }
 
- function cargarData(datos){
+    function cargarData(datos){
         console.log(datos)
         var source = {
             localData: datos,
